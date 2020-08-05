@@ -7,7 +7,7 @@ export async function up(knex: Knex) {
         table.integer('from').notNullable();
         table.integer('to').notNullable();
 
-        table.integer('call_id')
+        table.integer('class_id')
             .notNullable()
             .references('id')
             .inTable('classes')
