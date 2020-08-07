@@ -2,37 +2,46 @@ import React from 'react';
 import whatsappIcon from '../../assets/images/icons/whatsapp.svg'
 import './styles.css'
 
-function TeacherItem() {
+interface DataProps {
+    data: {
+        avatar: string,
+        bio: string,
+        cost: number,
+        id: number,
+        name: string,
+        subject: string,
+        user_id: number,
+        whatsapp: string
+    }
+}
+
+const TeacherItem: React.FC<DataProps> = ({ data }) => {
     return (
         <article className="teacher-item">
-                    <header>
-                        <img 
-                            src="https://avatars2.githubusercontent.com/u/2254731?s=460&u=0ba16a79456c2f250e7579cb388fa18c5c2d7d65&v=4" 
-                            alt="Diego Fernandes"
-                        />
-                        <div>
-                            <strong>Diego Fernandes</strong>
-                            <span>Quimíca</span>
-                        </div>
-                    </header>
+            <header>
+                <img 
+                    src={data.avatar}
+                    alt={data.name}
+                />
+                <div>
+                    <strong>{data.name}</strong>
+                    <span>{data.subject}</span>
+                </div>
+            </header>
 
-                    <p>
-                        Entusiasta das melhores tecnologias de quimíca avançada.
-                        <br />
-                        Apaixonado por explodir coisas em laboratório e por mudar a vida das pessoas através de experiências
-                    </p>
+            <p>{data.bio}</p>
 
-                    <footer>
-                        <p>
-                            Preço/hora
-                            <strong>R$ 80.00</strong>
-                        </p>
-                        <button type="button">
-                            <img src={whatsappIcon} alt="WhatsApp"/>
-                            Entrar em Contato
-                        </button>
-                    </footer>
-                </article>
+            <footer>
+                <p>
+                    Preço/hora
+                    <strong>R$ {data.cost.toFixed(2)}</strong>
+                </p>
+                <button onClick={() => {window.open(`https://wa.me/${data.whatsapp}`)}}>
+                    <img src={whatsappIcon} alt="WhatsApp"/>
+                    Entrar em Contato
+                </button>
+            </footer>
+        </article>
     )
 }
 
