@@ -18,14 +18,14 @@ function Landing() {
 
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={[styles.button, styles.buttonPrimary]}>
-                    <Image source={studyIcon}/>
+                    <Image source={studyIcon} style={styles.icon}/>
                     <Text style={styles.buttonText}>
                         Estudar
                     </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity style={[styles.button, styles.buttonSecondary]}>
-                    <Image source={giveClassesIcon}/>
+                    <Image source={giveClassesIcon} style={styles.icon}/>
                     <Text style={styles.buttonText}>
                         Dar aulas
                     </Text>
