@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     },
     banner: {
         width: '100%',
-        resizeMode: 'contain'
+        resizeMode: 'contain',
     },
     title: {
         color: '#FFF',
@@ -52,9 +52,6 @@ const styles = StyleSheet.create({
         lineHeight: 20,
         maxWidth: 140,
         marginTop: 40
-    },
-    icon: {
-
     }
 });
 
