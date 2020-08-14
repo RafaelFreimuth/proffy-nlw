@@ -44,8 +44,8 @@ function TeacherForm() {
 
             history.push('/')
             
-        }).catch((error) => {
-            alert(error)
+        }).catch((error: Error) => {
+            alert(error.message)
         });
     }
 

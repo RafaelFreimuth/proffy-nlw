@@ -14,7 +14,6 @@ function TeacherList() {
            const classes = await api.get('/classes');
 
            setClasses(classes.data);
-           console.log(classes)
        }
 
        carregar();
