@@ -15,13 +15,13 @@ function Landing() {
 
     const [connections, setConnections] = useState(0);
         
-        useEffect(() => {
-            async function loadConexao() {
-                const response = await api.get('/connections');        
-                setConnections(response.data.total);
-            }
-            loadConexao();
-        }, []);
+    useEffect(() => {
+        async function loadConexao() {
+            const response = await api.get('/connections');        
+            setConnections(response.data.total);
+        }
+        loadConexao();
+    }, []);
     
     function handleNavigateToGiveClassesPage() {
         navigation.navigate('GiveClasses');
